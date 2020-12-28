@@ -1,0 +1,10 @@
+.times {
+}
+.times {
+  align-items: center;
+  margin: auto;
+  padding: 0 5%;
+  max-width: 1200px;
+  columns: 2;
+  overflow-wrap: break-word;
+}

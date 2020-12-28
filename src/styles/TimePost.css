@@ -1,0 +1,42 @@
+.timepost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timepost__top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.timepost__top > .timepost__title {
+  display: flex;
+  justify-content: center;
+}
+
+.timepost__top > .timepost__info {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.timepost__title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.timepost__middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timepost__middle > img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.timepost__middle > p {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
