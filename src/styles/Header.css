@@ -17,11 +17,16 @@
   margin: auto;
 }
 
+.header__top-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .header__top-title {
   font-size: 60px;
 }
 
-.header__top > span {
+.header__top-left > span {
   font-size: 13px;
   font-weight: 600;
 }

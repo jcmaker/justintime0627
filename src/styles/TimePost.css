@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+}
+.timepost:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
 }
 
 .timepost__top {
@@ -18,6 +23,7 @@
 .timepost__top > .timepost__info {
   display: flex;
   justify-content: flex-end;
+  margin-top: 4px;
 }
 
 .timepost__title {
@@ -33,10 +39,16 @@
 .timepost__middle > img {
   max-width: 100%;
   object-fit: contain;
+  margin-bottom: 4px;
 }
 
 .timepost__middle > p {
   width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.timepost__bottom {
+  position: relative;
+  left: 0;
 }
