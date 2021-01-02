@@ -1,0 +1,22 @@
+.comment {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+
+.comment__left {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.comment__left-info {
+  margin-left: 20px;
+}
+
+.comment__left-info--timestamp {
+  margin-left: 20px;
+  font-size: x-small;
+  color: gray;
+}

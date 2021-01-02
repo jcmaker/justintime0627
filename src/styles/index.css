@@ -2,11 +2,15 @@
 
 /* Screens */
 @import "Times.css";
+@import "PostTime.css";
+@import "Login.css";
 
 /* Components */
 @import "Header.css";
 @import "Footer.css";
 @import "TimePost.css";
+@import "OpenTime.css";
+@import "Comments.css";
 
 * {
   margin: 0;

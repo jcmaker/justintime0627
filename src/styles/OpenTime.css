@@ -1,0 +1,42 @@
+.opentime {
+  margin: auto;
+  padding: 0 5%;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.opentime__top {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+}
+
+.opentime__bottom-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.opentime__bottom-input > form > input {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline-width: 0;
+  font-size: large;
+  width: 100%;
+}
+
+.opentime__bottom-input > form > button {
+  display: none;
+}

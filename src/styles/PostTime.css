@@ -1,0 +1,41 @@
+.post {
+  margin: auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 5%;
+  height: 100vh;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.post__form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+}
+
+.post__form-title {
+  height: 50px;
+}
+
+.post__form-main {
+  flex: 2;
+  margin: 30px 0px;
+  resize: none;
+}
+
+.post__form-title,
+.post__form-main {
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+}
+
+.post__form-btn {
+  background-color: gray;
+  color: whitesmoke;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0px;
+}

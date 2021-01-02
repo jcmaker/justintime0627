@@ -1,5 +1,5 @@
 .times {
-  align-items: center;
+  align-items: stretch;
   margin: auto;
   margin-top: 15px;
   padding: 0 5%;
@@ -7,9 +7,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow-wrap: break-word;
-  grid-column-start: 1;
+  /* grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-end: 2; */
   gap: 25px;
 }
