@@ -1,11 +1,16 @@
 import React from "react";
 import Times from "./Times";
-import SmsIcon from "@material-ui/icons/Sms";
 import { IconButton } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+import JustinUID from "../JustinUid";
+import CreateIcon from "@material-ui/icons/Create";
 
 const Home = () => {
   const history = useHistory();
+  const user = useSelector(selectUser);
+  const onlyJustin = JustinUID;
   return (
     <div className="home">
       <Times />
@@ -13,10 +18,12 @@ const Home = () => {
       <div className="goto">
         <IconButton
           onClick={() => {
-            history.push("/postTime");
+            user.uid === onlyJustin
+              ? history.push("/postTime")
+              : alert("Im Sorry :( Only Justin could go in");
           }}
         >
-          <SmsIcon />
+          <CreateIcon />
         </IconButton>
       </div>
     </div>

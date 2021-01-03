@@ -1,30 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TimePost from "../components/TimePost";
+import db from "../fbManager";
+import AddIcon from "@material-ui/icons/Add";
+import { Button } from "@material-ui/core";
 
 const Times = () => {
+  const [times, setTimes] = useState([]);
+  const [loadTimes, setLoadTimes] = useState(5);
+
+  useEffect(() => {
+    db.collection("times")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        const timesArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+        setTimes(timesArray);
+      });
+  }, []);
+
+  const LoadMoreTimes = () => {
+    setLoadTimes((prevValue) => prevValue + 3);
+  };
   return (
-    <div className="times">
-      <TimePost id="1" src="../img/justintimes_logo.png" />
-      <TimePost
-        id="2"
-        src="https://static01.nyt.com/images/2020/12/27/multimedia/00niekro1/00niekro1-superJumbo.jpg?quality=90&auto=webp"
-      />
-      <TimePost id="3" src="../img/justintimes_logo.png" />
-      <TimePost
-        id="4"
-        src="https://static01.nyt.com/images/2020/12/27/multimedia/00niekro1/00niekro1-superJumbo.jpg?quality=90&auto=webp"
-      />
-      <TimePost id="5" src="../img/justintimes_logo.png" />
-      <TimePost
-        id="6"
-        src="https://static01.nyt.com/images/2020/12/27/multimedia/00niekro1/00niekro1-superJumbo.jpg?quality=90&auto=webp"
-      />
-      <TimePost id="7" src="../img/justintimes_logo.png" />
-      <TimePost
-        id="8"
-        src="https://static01.nyt.com/images/2020/12/27/multimedia/00niekro1/00niekro1-superJumbo.jpg?quality=90&auto=webp"
-      />
-    </div>
+    <>
+      <div className="times">
+        {times.slice(0, loadTimes).map((time) => (
+          <TimePost
+            key={time.id}
+            title={time.data.title}
+            content={time.data.content}
+            imageSrc={time.data.mainImageUrl}
+            creator={time.creatorId}
+            timestamp={time.data.timestamp}
+          />
+        ))}
+      </div>
+      <div className="load-more">
+        <Button onClick={LoadMoreTimes}>
+          <AddIcon /> Load More
+        </Button>
+      </div>
+    </>
   );
 };
 

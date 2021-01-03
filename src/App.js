@@ -6,13 +6,13 @@ import Footer from "./components/Footer";
 import OpenTime from "./components/OpenTime";
 import PostTime from "./screens/PostTime";
 import { useDispatch, useSelector } from "react-redux";
-import { seletUser, login, logout } from "./features/userSlice";
+import { selectUser, login, logout } from "./features/userSlice";
 import { auth } from "./fbManager";
 import Login from "./screens/Login";
 
 function App() {
   const dispatch = useDispatch();
-  const user = useSelector(seletUser);
+  const user = useSelector(selectUser);
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {

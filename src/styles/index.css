@@ -4,6 +4,7 @@
 @import "Times.css";
 @import "PostTime.css";
 @import "Login.css";
+@import "Loading.css";
 
 /* Components */
 @import "Header.css";
@@ -32,4 +33,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+a {
+  opacity: 0.65;
+  color: black;
 }

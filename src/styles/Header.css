@@ -20,10 +20,28 @@
 .header__top-left {
   display: flex;
   flex-direction: column;
+  width: 33.3%;
+  justify-content: flex-start;
 }
 
 .header__top-title {
   font-size: 60px;
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header__top-info {
+  display: flex;
+  align-items: center;
+  width: 33.3%;
+  justify-content: flex-end;
+}
+
+.header__top-info > span {
+  font-weight: 700;
+  margin: 0px 5px;
 }
 
 .header__top-left > span {
@@ -40,6 +58,7 @@
   padding: 10px 0px;
   height: auto;
   border-bottom: 1px solid #121212;
+  cursor: pointer;
 }
 
 .header__bottom > span {

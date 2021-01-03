@@ -11,5 +11,8 @@
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2; */
-  gap: 25px;
+}
+.load-more {
+  margin: 10px;
+  opacity: 0.65;
 }

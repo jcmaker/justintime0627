@@ -17,6 +17,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.footer__top > h2 {
+  cursor: pointer;
+}
 .footer__middle {
   display: flex;
   flex-direction: column;
@@ -26,4 +30,13 @@
 
 .footer__bottom {
   border-top: 1px solid #cfcfcf;
+}
+
+a {
+  margin: 4px;
+}
+
+.footer__middle > span,
+.footer__top--social-icons > span {
+  opacity: 0.65;
 }

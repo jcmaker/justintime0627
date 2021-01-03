@@ -7,6 +7,14 @@
 
 .login__logo {
   font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login__logo > h5 {
+  opacity: 0.4;
 }
 
 .login > button {
