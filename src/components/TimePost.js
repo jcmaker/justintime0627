@@ -1,6 +1,6 @@
 import React from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Button } from "@material-ui/core";
 import MessageIcon from "@material-ui/icons/Message";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { useHistory } from "react-router-dom";
@@ -23,7 +23,7 @@ const TimePost = ({ title, content, imageSrc, timestamp }) => {
   };
   return (
     <>
-      <div className="timepost" onClick={openTime}>
+      <div className="timepost">
         <div className="timepost__top">
           <span className="timepost__title">{title}</span>
           <span className="timepost__info">Justin Cho</span>
@@ -42,9 +42,9 @@ const TimePost = ({ title, content, imageSrc, timestamp }) => {
           <IconButton>
             <MessageIcon />
           </IconButton>
-          <IconButton onClick={openTime}>
-            <ArrowForwardIcon />
-          </IconButton>
+          <Button onClick={openTime}>
+            <ArrowForwardIcon /> more
+          </Button>
         </div>
       </div>
     </>

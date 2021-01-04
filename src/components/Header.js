@@ -1,9 +1,10 @@
 import React from "react";
-import { Avatar, Button } from "@material-ui/core";
+import { Avatar, Button, IconButton } from "@material-ui/core";
 import { auth } from "../fbManager";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { useHistory } from "react-router-dom";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const Header = () => {
   const user = useSelector(selectUser);
@@ -42,6 +43,17 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__top">
+        <div className="header__side-menu">
+          <IconButton
+            onClick={() => {
+              document
+                .querySelector(".header__bottom")
+                .classList.toggle("open");
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </div>
         <div className="header__top-left">
           <span className="header__top-date">{`${day}, ${month} ${datedate}, ${year}`}</span>
           <span className="header__top-sub">Today's Paper</span>
@@ -49,6 +61,7 @@ const Header = () => {
         <h2
           className="header__top-title"
           onClick={() => {
+            window.location.reload();
             history.push("/");
           }}
         >
@@ -69,6 +82,8 @@ const Header = () => {
       <div className="header__bottom">
         <span
           onClick={() => {
+            document.querySelector(".header__bottom").classList.toggle("open");
+            window.location.reload();
             history.push("/");
           }}
         >

@@ -38,3 +38,15 @@ a {
   opacity: 0.65;
   color: black;
 }
+
+@media screen and (max-width: 600px) {
+  * {
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+  }
+}

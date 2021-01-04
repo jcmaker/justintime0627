@@ -15,7 +15,7 @@ function OpenTime() {
   const closeTime = () => {
     history.push("/");
   };
-  console.log(selectedTime?.title);
+
   return (
     <div className="opentime">
       <div className="opentime__top">
@@ -25,15 +25,15 @@ function OpenTime() {
       </div>
       <div className="opentime__middle">
         <div className="timepost__top">
-          <span className="timepost__title">{selectedTime?.title}</span>
+          <span className="timepost__title-opened">{selectedTime?.title}</span>
           <span className="timepost__info">Justin Cho</span>
           <span className="timepost__info">
             {new Date(selectedTime?.timestamp?.toDate()).toUTCString()}
           </span>
         </div>
-        <div className="timepost__middle">
+        <div className="opentime__timepost-middle">
           <img className="timepost__img" src={selectedTime?.imageSrc} alt="" />
-          <pre className="timepost__content">{selectedTime?.content}</pre>
+          <p className=" opentime__post">{selectedTime?.content}</p>
         </div>
         <div className="timepost__bottom">
           <IconButton>

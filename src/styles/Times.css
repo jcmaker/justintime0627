@@ -16,3 +16,12 @@
   margin: 10px;
   opacity: 0.65;
 }
+
+@media screen and (max-width: 600px) {
+  .times {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}
