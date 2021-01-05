@@ -86,9 +86,14 @@ function OpenTime() {
               placeholder="Write a comment..."
               required
               onChange={(e) => setSendComments(e.target.value)}
-              value={sendComments}
+              value={sendComments.trim()}
+              disabled={!selectedTime?.timeId}
             />
-            <button type="submit" onClick={postComment}>
+            <button
+              type="submit"
+              onClick={postComment}
+              disabled={!sendComments.trim()}
+            >
               Send
             </button>
           </form>
