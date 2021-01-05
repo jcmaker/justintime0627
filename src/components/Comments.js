@@ -3,19 +3,19 @@ import { Avatar, IconButton } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import CreateIcon from "@material-ui/icons/Create";
 
-function Comments() {
+function Comments({ timestamp, comments, userName, userPhoto }) {
   return (
     <div className="comment">
       <div className="comment__left">
-        <Avatar />
+        <Avatar src={userPhoto} />
         <div className="comment__left-info">
           <h4>
-            Justin Cho
+            {userName}
             <span className="comment__left-info--timestamp">
-              Sun, 02 Jan 2021
+              {new Date(timestamp?.toDate()).toUTCString()}
             </span>
           </h4>
-          <p>this is a comment</p>
+          <p>{comments}</p>
         </div>
       </div>
 

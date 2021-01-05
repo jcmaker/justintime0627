@@ -7,9 +7,10 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { selectTime } from "../features/timeSlice";
 
-const TimePost = ({ title, content, imageSrc, timestamp }) => {
+const TimePost = ({ title, content, imageSrc, timestamp, timeId, user }) => {
   const history = useHistory();
   const dispatch = useDispatch();
+
   const openTime = () => {
     dispatch(
       selectTime({
@@ -17,10 +18,13 @@ const TimePost = ({ title, content, imageSrc, timestamp }) => {
         content,
         imageSrc,
         timestamp,
+        timeId,
+        user,
       })
     );
     history.push("/time");
   };
+
   return (
     <>
       <div className="timepost">

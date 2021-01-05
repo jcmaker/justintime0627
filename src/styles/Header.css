@@ -71,7 +71,8 @@
 }
 
 .header__side-menu,
-.header__side-menu > .MuiSvgIcon-root {
+.header__side-menu > .MuiSvgIcon-root,
+.header__side-logout {
   display: none;
 }
 
@@ -101,6 +102,10 @@
     display: none;
   }
 
+  .header__top-title {
+    font-size: 40px;
+  }
+
   .header__bottom {
     display: flex;
     flex-direction: column;
@@ -123,9 +128,13 @@
     z-index: 2;
   }
 
+  .header__side-logout {
+    display: flex;
+  }
+
   .header__side-menu {
     display: initial;
-    margin: 10px;
+    margin: 2px;
     z-index: 3;
     position: fixed;
     top: 0;

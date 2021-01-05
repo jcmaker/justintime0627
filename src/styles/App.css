@@ -30,3 +30,9 @@
   margin: 20px;
   color: black;
 }
+
+@media screen and (max-width: 600px) {
+  .goto {
+    display: none;
+  }
+}

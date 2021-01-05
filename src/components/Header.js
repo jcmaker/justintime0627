@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { useHistory } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 const Header = () => {
   const user = useSelector(selectUser);
@@ -61,8 +62,8 @@ const Header = () => {
         <h2
           className="header__top-title"
           onClick={() => {
-            window.location.reload();
             history.push("/");
+            window.location.reload();
           }}
         >
           JustinTime
@@ -83,8 +84,8 @@ const Header = () => {
         <span
           onClick={() => {
             document.querySelector(".header__bottom").classList.toggle("open");
-            window.location.reload();
             history.push("/");
+            window.location.reload();
           }}
         >
           Home
@@ -92,6 +93,16 @@ const Header = () => {
         <span>About</span>
         <span>Contact</span>
         <span>Project</span>
+        <div className="header__side-logout">
+          <Button
+            onClick={() => {
+              auth.signOut();
+              window.location.reload();
+            }}
+          >
+            <ExitToAppIcon /> logout
+          </Button>
+        </div>
       </div>
     </div>
   );
