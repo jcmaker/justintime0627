@@ -11,6 +11,7 @@ const Home = () => {
   const history = useHistory();
   const user = useSelector(selectUser);
   const onlyJustin = JustinUID;
+
   return (
     <div className="home">
       <Times />
@@ -18,9 +19,15 @@ const Home = () => {
       <div className="goto">
         <IconButton
           onClick={() => {
-            user.uid === onlyJustin
-              ? history.push("/postTime")
-              : alert("Im Sorry :( Only Justin could go in");
+            user
+              ? user.uid === onlyJustin
+                ? history.push("/postTime")
+                : alert("Im Sorry :( Only Justin could go in")
+              : alert("you should login :)");
+
+            // user.uid === onlyJustin
+            //   ? history.push("/postTime")
+            //   : alert("Im Sorry :( Only Justin could go in");
           }}
         >
           <CreateIcon />

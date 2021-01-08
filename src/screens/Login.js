@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@material-ui/core";
-import { auth, provider } from "../fbManager";
+import { auth, providerGoogle } from "../fbManager";
 import Loading from "./Loading";
 
 function Login() {
@@ -17,11 +17,11 @@ function Login() {
           className="login__btn"
           onClick={() => {
             auth
-              .signInWithPopup(provider)
+              .signInWithPopup(providerGoogle)
               .catch((error) => alert(error.message));
           }}
         >
-          Login
+          Login with Google
         </Button>
       </div>
     </>

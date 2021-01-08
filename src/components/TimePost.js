@@ -6,10 +6,13 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { selectTime } from "../features/timeSlice";
+// import db from "../fbManager";
 
 const TimePost = ({ title, content, imageSrc, timestamp, timeId, user }) => {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  // const [hitLike, setHitLike] = useState("");
 
   const openTime = () => {
     dispatch(
@@ -25,6 +28,14 @@ const TimePost = ({ title, content, imageSrc, timestamp, timeId, user }) => {
     history.push("/time");
   };
 
+  // const onClickLike = (event) => {
+  //   event.preventDefault();
+
+  //   db.collection("times").doc(timeId).collection("likes").add({
+  //     userId: user.uid,
+  //   });
+  //   setHitLike("");
+  // };
   return (
     <>
       <div className="timepost">
@@ -41,7 +52,12 @@ const TimePost = ({ title, content, imageSrc, timestamp, timeId, user }) => {
         </div>
         <div className="timepost__bottom">
           <IconButton>
-            <FavoriteIcon />
+            {/* <div className="did-like">
+              <FavoriteIcon />
+            </div> */}
+            <div className="dis-like">
+              <FavoriteIcon />
+            </div>
           </IconButton>
           <IconButton>
             <MessageIcon />

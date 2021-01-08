@@ -49,7 +49,6 @@ function OpenTime() {
     setSendComments("");
   };
 
-  console.log(sendComments);
   return (
     <div className="opentime">
       <div className="opentime__top">
@@ -83,11 +82,30 @@ function OpenTime() {
           <form>
             <input
               type="text"
-              placeholder="Write a comment..."
-              required
-              onChange={(e) => setSendComments(e.target.value)}
-              value={sendComments.trim()}
               disabled={!selectedTime?.timeId}
+              placeholder="Write a comment..."
+              value={sendComments}
+              onChange={(e) => setSendComments(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              onClick={postComment}
+              disabled={!sendComments.trim()}
+            >
+              Send
+            </button>
+          </form>
+        </div>
+        <div className="comment-form-media">
+          <form>
+            <input
+              type="text"
+              disabled={!selectedTime?.timeId}
+              placeholder="Write a comment..."
+              value={sendComments}
+              onChange={(e) => setSendComments(e.target.value)}
+              required
             />
             <button
               type="submit"

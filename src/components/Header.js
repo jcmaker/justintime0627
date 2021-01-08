@@ -63,20 +63,42 @@ const Header = () => {
           className="header__top-title"
           onClick={() => {
             history.push("/");
-            window.location.reload();
           }}
         >
           JustinTime
         </h2>
         <div className="header__top-info">
-          <Avatar src={user.photo} /> <span>|</span>
-          <Button
+          {/* <Avatar src={user.photo} />  */}
+          <Avatar src={user ? user.photo : ""} /> <span>|</span>
+          {/* <Button
             onClick={() => {
               auth.signOut();
               window.location.reload();
             }}
           >
             Logout
+          </Button> */}
+          <Button>
+            {user ? (
+              <div
+                className="loggedIn"
+                onClick={() => {
+                  auth.signOut();
+                  window.location.reload();
+                }}
+              >
+                Logout
+              </div>
+            ) : (
+              <div
+                className="notLoggedIn"
+                onClick={() => {
+                  history.push("/login");
+                }}
+              >
+                Login
+              </div>
+            )}
           </Button>
         </div>
       </div>
@@ -85,7 +107,6 @@ const Header = () => {
           onClick={() => {
             document.querySelector(".header__bottom").classList.toggle("open");
             history.push("/");
-            window.location.reload();
           }}
         >
           Home

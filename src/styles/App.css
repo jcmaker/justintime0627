@@ -31,6 +31,10 @@
   color: black;
 }
 
+.did-like {
+  color: rgb(255, 67, 67);
+}
+
 @media screen and (max-width: 600px) {
   .goto {
     display: none;
